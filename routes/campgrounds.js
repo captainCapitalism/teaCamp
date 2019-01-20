@@ -4,12 +4,14 @@ var Campground = require("../models/campground");
 var middleware = require("../middleware");
 
 router.get("/", function(req, res) {
+
     Campground.find({}, function(err, allCampgrounds) {
         if (err) {
             console.log(err);
         }
         else {
-            res.render("campgrounds/index", { campgrounds: allCampgrounds, currentUser: req.user })
+
+            res.render("campgrounds/index", { campgrounds: allCampgrounds, currentUser: req.user });
         }
     });
 });

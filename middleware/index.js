@@ -17,7 +17,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next) {
                     req.flash("error", "Item not found.");
                     return res.redirect("back");
                 }
-
+                
                 if (foundCampground.author.id.equals(req.user._id)) {
                     next();
                 }
